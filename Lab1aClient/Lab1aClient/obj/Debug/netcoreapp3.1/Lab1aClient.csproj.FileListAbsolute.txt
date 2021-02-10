@@ -1,0 +1,16 @@
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.exe
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.deps.json
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.runtimeconfig.json
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.runtimeconfig.dev.json
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.dll
+D:\ASP.NET\Lab1aClient\Lab1aClient\bin\Debug\netcoreapp3.1\Lab1aClient.pdb
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.csprojAssemblyReference.cache
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.Form1.resources
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.csproj.GenerateResource.cache
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.AssemblyInfoInputs.cache
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.AssemblyInfo.cs
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.dll
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.pdb
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.genruntimeconfig.cache
+D:\ASP.NET\Lab1aClient\Lab1aClient\obj\Debug\netcoreapp3.1\Lab1aClient.Properties.Resources.resources

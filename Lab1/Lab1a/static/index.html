@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="number" id="x" />
+    <span>*</span>
+    <input type="number"  id="y" />
+    <input type="submit" value=" = " onclick="post()" />
+    <span id="result"></span>
+    <script>
+        function post() {
+            let request = new XMLHttpRequest();
+            let params = 'x=' + document.getElementById('x').value + '&y=' + document.getElementById('y').value;
+            if (request) {
+                request.open('POST', 'https://localhost:44333/', true)
+                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+                request.onreadystatechange = () => {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            let rs = document.getElementById('result')
+                            rs.innerHTML = request.responseText
+                        }
+                    }
+                }
+                request.send(params)
+            }
+        }
+    </script>
+</body>
+
+</html>
