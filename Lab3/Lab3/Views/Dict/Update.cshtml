@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <a href="/Dict/Index">Back Home</a>
+        <form method="post" action="/Dict/UpdateSave">
+            <input type="text" name="fullname"value="@ViewBag.name" />
+            <input type="text" name="telephone" />
+            <button type="submit">Edit telephone</button>
+        </form>
+    </div>
+</body>
+</html>

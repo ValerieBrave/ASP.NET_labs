@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        @*<a href="/Dict/Index">Back Home</a>*@
+        <div>@Html.ActionLink("Back to List", "Index")</div>
+        <form method="post" action="/Dict/AddSave">
+            <input type="text" name="fullname" placeholder="Name" />
+            <input type="text" name="telephone" placeholder="TelNo" />
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</body>
+</html>

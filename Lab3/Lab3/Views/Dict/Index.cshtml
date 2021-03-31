@@ -1,0 +1,40 @@
+﻿
+@using Lab3.Models;
+@{
+    Layout = null;
+    List < Note > allnotes = ViewBag.getall;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My Dict Index</title>
+</head>
+<body>
+    <h1>INDEX PAGE</h1>
+    <a href="/Dict/Add">Add</a>
+    <div>
+        <table style="border:2px solid pink">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Telephone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Note n in allnotes)
+                 {
+                    <tr>
+                        <td>@n.fullname</td>
+                        <td>@n.telephone</td>
+                        <td><a href="/Dict/Update/@n.fullname">Update</a></td>
+                        <td><a href="/Dict/Delete/@n.fullname">Delete</a></td>
+                    </tr>
+                 }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
