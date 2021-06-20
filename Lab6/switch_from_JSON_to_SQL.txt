@@ -1,0 +1,9 @@
+ГДЕ ПОМЕНЯТЬ JSON_dll на SQL_dll:
+1) NotesController
+2) NinjectRegistration
+
+Views:
+1) Index
+2) Partial_Note
+
+Helpers - во всех

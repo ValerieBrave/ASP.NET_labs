@@ -1,0 +1,8 @@
+﻿@*@using JSON_dll;*@
+@using SQL_dll;
+
+@model Note
+
+<input type="radio" id="@Model.NoteId" name="NoteId" value="@Model.NoteId" onchange="UpdateButtonState()" />
+<label for="@Model.NoteId">@Model</label>
+<br />

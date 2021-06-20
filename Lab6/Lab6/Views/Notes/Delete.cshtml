@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header
+{
+    <header>
+        <h4>DELETE HEADER</h4>
+    </header>
+}
+
+<form class="delete-form" method="POST" action="/Notes/DeleteSave">
+    <div class="input-form">
+        <input id="NoteId" name="NoteId" type="text" value="@ViewBag.SelectedNote.NoteId" hidden />
+        <input id="Fullname" name="Fullname" type="text" value="@ViewBag.SelectedNote.Fullname" readonly />
+        <input id="Telephone" name="Telephone" type="text" value="@ViewBag.SelectedNote.Telephone" readonly />
+    </div>
+    <div>
+        <input class="link-button" id="delete_button" type="submit" value="Удалить" />
+        <a class="cancel-link" href="/Notes/Index">Отказаться</a>
+    </div>
+</form>
+
+@section footer
+{
+    <footer>
+        <h4>DELETE FOOTER</h4>
+    </footer>
+}
+

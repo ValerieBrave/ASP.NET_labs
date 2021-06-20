@@ -1,0 +1,21 @@
+﻿@using Lab6.Views.Shared.Helpers
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header
+{
+    <header>
+        <h4>UPDATE HEADER</h4>
+    </header>
+}
+
+@UpdateFormHelper.UpdateForm(Html, ViewBag.notes, ViewBag.SelectedNote)
+
+@section footer
+{
+    <footer>
+        <h4>UPDATE FOOTER</h4>
+    </footer>
+}

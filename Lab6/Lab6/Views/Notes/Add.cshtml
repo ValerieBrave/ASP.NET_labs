@@ -1,0 +1,22 @@
+﻿@using Lab6.Views.Shared.Helpers
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header
+{
+    <header>
+        <h4>ADD HEADER</h4>
+    </header>
+}
+
+@AddFormHelper.AddForm(Html, ViewBag.notes)
+
+@section footer
+{
+    <footer>
+        <h4>ADD FOOTER</h4>
+    </footer>
+}
+
