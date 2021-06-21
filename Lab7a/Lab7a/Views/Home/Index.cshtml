@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <label>NoteId</label><input type="text" id="NoteId" /><br />
+        <label>Fullname</label><input type="text" id="Fullname" /><br />
+        <label>Telephone</label><input type="text" id="Telephone" /><br />
+    </div>
+    <br />
+    <div>
+        <button onclick="getAllNotes()">Get All</button>
+        <button onclick="addNote()">Add не пашет</button>
+        <button onclick="editNote()">Edit не пашет</button>
+        <button onclick="deleteNote()">Delete</button>
+    </div>
+    <div id="list">
+
+    </div>
+
+
+    <script>
+        function getAllNotes() {
+            $.ajax({
+                url: '/api/notes',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    let res = document.getElementById('list');
+                    res.innerHTML = '';
+
+                    data.forEach(function (note, i, data) {
+                        res.innerHTML += i + 1 + ") Fullname: " + note.Fullname + ", Telephone: " + note.Telephone + "<br>";
+                    });
+                }
+            });
+        }
+
+        //function addNote() {
+        //    let note = {
+        //        Fullname: $('#Fullname').val(),
+        //        Telephone: $('#Telephone').val(),
+        //    }
+        //    $.ajax({
+        //        url: '/api/notes/',
+        //        type: 'POST',
+        //        data: JSON.stringify(note),
+        //        contentType: "application/json;charset=utf-8",
+        //        success: function () {
+        //            getAllNotes();
+        //        }
+        //    })
+        //}
+
+        function addNote() {
+            fetch('/api/notes/post', { method: 'POST', contentType: 'application/json' },
+                JSON.stringify({ Fullname: $('#Fullname').val(), Telephone: $('#Telephone').val() }))
+                .then(res => res.text())
+                .then(d => alert(d.toString()))
+        }
+
+        function editNote() {
+            let note = {
+                NoteId: $('#NoteId').val(),
+                Fullname: $('#Fullname').val(),
+                Telephone: $('#Telephone').val(),
+            }
+            $.ajax({
+                url: `/api/notes/put?id=${note.NoteId}`,
+                type: 'PUT',
+                data: `{\"Fullname\":\"${name.Fullname}\", \"Telephone\":\"${note.Telephone}\"}`,
+                contentType: "application/json;charset=utf-8",
+                success: function () {
+                    getAllNotes();
+                }
+            })
+        }
+
+        function deleteNote() {
+            let id = $('#NoteId').val()
+            $.ajax({
+                url: `/api/notes/delete?id=${id}`,
+                type: 'Delete',
+                success: function () {
+                    getAllNotes();
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>
