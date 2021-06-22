@@ -51,28 +51,28 @@
             });
         }
 
-        //function addNote() {
-        //    let note = {
-        //        Fullname: $('#Fullname').val(),
-        //        Telephone: $('#Telephone').val(),
-        //    }
-        //    $.ajax({
-        //        url: '/api/notes/',
-        //        type: 'POST',
-        //        data: JSON.stringify(note),
-        //        contentType: "application/json;charset=utf-8",
-        //        success: function () {
-        //            getAllNotes();
-        //        }
-        //    })
-        //}
-
         function addNote() {
-            fetch('/api/notes/post', { method: 'POST', contentType: 'application/json' },
-                JSON.stringify({ Fullname: $('#Fullname').val(), Telephone: $('#Telephone').val() }))
-                .then(res => res.text())
-                .then(d => alert(d.toString()))
+            let note = {
+                Fullname: $('#Fullname').val(),
+                Telephone: $('#Telephone').val(),
+            }
+            $.ajax({
+                url: '/api/notes/',
+                type: 'POST',
+                data: JSON.stringify(note),
+                contentType: "application/json;charset=utf-8",
+                success: function () {
+                    getAllNotes();
+                }
+            })
         }
+
+        //function addNote() {
+        //    fetch('/api/notes/post', { method: 'POST', contentType: 'application/json' },
+        //        JSON.stringify({ Fullname: $('#Fullname').val(), Telephone: $('#Telephone').val() }))
+        //        .then(res => res.text())
+        //        .then(d => alert(d.toString()))
+        //}
 
         function editNote() {
             let note = {
@@ -83,7 +83,7 @@
             $.ajax({
                 url: `/api/notes/put?id=${note.NoteId}`,
                 type: 'PUT',
-                data: `{\"Fullname\":\"${name.Fullname}\", \"Telephone\":\"${note.Telephone}\"}`,
+                data: JSON.stringify(note),
                 contentType: "application/json;charset=utf-8",
                 success: function () {
                     getAllNotes();

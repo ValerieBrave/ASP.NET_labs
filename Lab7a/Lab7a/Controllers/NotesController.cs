@@ -24,19 +24,19 @@ namespace Lab7a.Controllers
             return JsonConvert.SerializeObject(this.notesDicionary.GetAll());
         }
 
-        [HttpPost]
-        public void Post([FromBody]string json)
+       
+        public void Post([FromBody]NoteDto note)
         {
-            Note note = JsonConvert.DeserializeObject<Note>(json);
+            //Note note = JsonConvert.DeserializeObject<Note>(json);
             this.notesDicionary.Add(new Note(note.Fullname, note.Telephone));
         }
 
         [HttpPut]
-        public void Put(long id, [FromBody]string json)
+        public void Put(long id, [FromBody] NoteDto note)
         {
-            Note note = JsonConvert.DeserializeObject<Note>(json);
-            note.NoteId = id;
-            this.notesDicionary.Update(note);
+            Note noteN = new Note(id, note.Fullname, note.Telephone);
+            
+            this.notesDicionary.Update(noteN);
         }
 
         [HttpDelete]
